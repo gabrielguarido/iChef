@@ -19,6 +19,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.11",
     "nodemailer": "^6.4.6",
+    "nodemailer-express-handlebars": "^4.0.0",
     "path": "^0.12.7",
     "react": "16.11.0",
     "react-native": "0.62.2"
