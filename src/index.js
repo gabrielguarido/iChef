@@ -28,6 +28,9 @@ export default function App() {
     }).start();
   }, []);
 
+  /**
+   * Keyboard is open
+   */
   function keyboardDidShow() {
     Animated.spring(opacity, {
       toValue: 0,
@@ -35,6 +38,9 @@ export default function App() {
     }).start();
   }
 
+  /**
+   * Keyboard is closed
+   */
   function keyboardDidHide() {
     Animated.spring(opacity, {
       toValue: 1,
