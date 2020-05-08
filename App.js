@@ -1,15 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   Text,
   KeyboardAvoidingView,
   TextInput,
   TouchableOpacity,
+  Animated,
+  Keyboard,
 } from 'react-native';
 
 import styles from './styles';
 
 export default function App() {
+
+  const [offset] = useState(new Animated.ValueXY({ x: 0, y: 30 }));
+  const [opacity] = useState(new Animated.Value(1));
+
+  useEffect(() => { 
+    keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', keyboardDidShow);
+    keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', keyboardDidHide);
+
+    Animated.spring(offset.y, {
+      toValue: 0,
+      speed: 4,
+      bounciness: 20,
+      useNativeDriver: true,
+    }).start();
+  }, []);
+
+  function keyboardDidShow() {
+    Animated.spring(opacity, {
+      toValue: 0,
+      useNativeDriver: true,
+    }).start();
+  }
+
+  function keyboardDidHide() {
+    Animated.spring(opacity, {
+      toValue: 1,
+      useNativeDriver: true,
+    }).start();
+  }
+
   return (
     <KeyboardAvoidingView style={styles.background}>
       <View style={styles.containerTop}>
@@ -22,12 +54,19 @@ export default function App() {
         </Text>
       </View>
 
-      <View style={styles.container}>
+      <Animated.View style={[
+        styles.container,
+        {
+          transform: [
+            { translateY: offset.y }
+          ]
+        }
+      ]}>
         <TextInput
           style={styles.input}
           placeholder="Digite seu e-mail..."
           autoCorrect={false}
-          autoCapitalize={false}
+          autoCapitalize="none"
           onChangeText={() => {}}
         />
 
@@ -35,7 +74,7 @@ export default function App() {
           style={styles.input}
           placeholder="Digite sua senha..."
           autoCorrect={false}
-          autoCapitalize={false}
+          autoCapitalize="none"
           onChangeText={() => {}}
         />
 
@@ -53,9 +92,14 @@ export default function App() {
             ENTRAR
           </Text>
         </TouchableOpacity>
-      </View>
+      </Animated.View>
 
-      <View style={styles.containerBottom}>
+      <Animated.View style={[
+        styles.containerBottom,
+        {
+          opacity: opacity,
+        }
+      ]}>
         <TouchableOpacity
           style={styles.submitCreateAccount}
           activeOpacity={0.8}
@@ -70,7 +114,7 @@ export default function App() {
             Continuar sem login
           </Text>
         </TouchableOpacity>
-      </View>
+      </Animated.View>
     </KeyboardAvoidingView> 
   );
 };

@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
   },
   submitLogin: {
-    backgroundColor: '#A61A1A',
+    backgroundColor: '#FFFFFF',
     width: '90%',
     height: 45,
     alignItems: 'center',
@@ -58,11 +58,11 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 5, height: 5 },
     shadowOpacity: 1,
     elevation: 10,
-    marginTop: 30,
-    marginBottom: -20,
+    marginTop: 40,
+    marginBottom: -40,
   },
   submitCreateAccount: {
-    backgroundColor: '#A61A1A',
+    backgroundColor: '#FFFFFF',
     width: '90%',
     height: 45,
     alignItems: 'center',
@@ -76,16 +76,17 @@ const styles = StyleSheet.create({
     elevation: 10,
   },
   submitText: {
-    color: '#FFFFFF',
+    color: '#DE3232',
     fontSize: 24,
     fontWeight: 'bold',
+    textTransform: 'uppercase',
   },
   containerBottom: {
     alignItems: 'center',
     justifyContent: 'center',
     width: '90%',
     height: '20%',
-    borderTopColor: '#000000',
+    borderTopColor: '#5B5B5B',
     borderTopWidth: 1
   },
 });
