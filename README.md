@@ -1,6 +1,6 @@
-<h2 align="center">
-  iChef - Your cooking partner :cookie:
-</h2>
+<h1 align="center">
+  iChef :cookie:
+</h1>
 
 
 ## :question: About the project
