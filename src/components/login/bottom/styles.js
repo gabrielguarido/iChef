@@ -1,34 +1,13 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#DE3232',
-  },
-  subTitle: {
+  subTitleContinueNoLogin: {
     fontSize: 20,
     fontFamily: 'Arial',
     color: '#FFFFFF',
+    marginTop: 15,
   },
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '90%',
-  },
-  input: {
-    backgroundColor: '#FFFFFF',
-    width: '90%',
-    marginBottom: 15,
-    color: '#5B5B5B',
-    fontSize: 18,
-    borderRadius: 30,
-    padding: 10,
-    paddingLeft: 20,
-  },
-  submitLogin: {
+  submitCreateAccount: {
     backgroundColor: '#FFFFFF',
     width: '90%',
     height: 50,
@@ -40,14 +19,20 @@ const styles = StyleSheet.create({
     shadowOffset: {width: 2, height: 2},
     shadowOpacity: 0.6,
     elevation: 10,
-    marginTop: 40,
-    marginBottom: -40,
   },
   submitText: {
     color: '#DE3232',
     fontSize: 24,
     fontWeight: 'bold',
     textTransform: 'uppercase',
+  },
+  containerBottom: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '90%',
+    height: '20%',
+    borderTopColor: '#5B5B5B',
+    borderTopWidth: 1,
   },
 });
 
