@@ -7,6 +7,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#DE3232',
   },
+  containerTop: {
+    height: '25%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  mainTitle: {
+    fontSize: 48,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+    fontFamily: 'Arial',
+  },
   subTitle: {
     fontSize: 20,
     fontFamily: 'Arial',
@@ -17,6 +28,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: '90%',
+    marginBottom: 100,
   },
   input: {
     backgroundColor: '#FFFFFF',
